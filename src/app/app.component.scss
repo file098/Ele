@@ -1,12 +1,9 @@
 div {
-  width: 100wh;
-  height: 100vh;
-  background: rgb(126, 46, 126);
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   h1 {
-    font-family: 'Roboto', sans-serif;
     font-size: 10em;
     color: rgb(239, 239, 82)
   }
