@@ -1,9 +1,17 @@
-div {
+.main-container {
   width: 100%;
-  display: flex;
+//   display: flex;
   justify-content: center;
   align-items: center;
-  h1 {
+  #title {
+    white-space: nowrap;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    margin: 0;
     font-size: 10em;
     color: rgb(239, 239, 82)
   }

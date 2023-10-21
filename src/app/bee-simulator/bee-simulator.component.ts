@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { P5Service } from '../p5.service';
 
 @Component({
@@ -12,4 +12,5 @@ export class BeeSimulatorComponent {
   ngOnInit() {
     this.p5Service.createCanvas();
   }
+
 }
