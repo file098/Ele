@@ -15,14 +15,19 @@ export class P5Service {
 
   private sketch(p: any, ) {
     let bees: Bee[] = [];
+    let flowers: Flower[] = [];
+
 
     p.setup = () => {
       p.createCanvas(p.windowWidth, p.windowHeight);
       p.background(0); // Set background with alpha channel for transparency
       p.noFill(); // Set outline without a fill color
       p.noStroke(); // Disable stroke (outline) for shapes
-      for (let i = 0; i < 20; i++) {
+      for (let i = 0; i < 27; i++) {
         bees.push(new Bee(p));
+      }
+      for (let i = 0; i < 15; i++) {
+        flowers.push(new Flower(p));
       }
     };
 
@@ -36,7 +41,38 @@ export class P5Service {
         bee.update();
         bee.display();
       }
+
+      for (let flower of flowers) {
+        flower.display();
+      }
     };
+
+    class Flower {
+      x: number;
+      y: number;
+      radius: number = 100;
+      flowerIcon: any;
+
+      constructor(p: any) {
+        this.x = p.random(p.width);
+        this.y = p.random(p.height);
+        this.radius = p.random(30, 100);
+        this.flowerIcon = p.loadImage('assets/flower.png');
+      }
+
+      display() {
+        p.push();
+        p.translate(this.x, this.y);
+        p.image(
+          this.flowerIcon,
+          -this.radius / 2,
+          -this.radius / 2,
+          this.radius,
+          this.radius
+        );
+        p.pop();
+      }
+    }
 
     class Bee {
       x: number;
